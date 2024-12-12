@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc";
+option java_outer_classname = "SongServiceProto";
+
+service SongService {
+  rpc CreateSong (SongCount) returns (SongResponse);
+  rpc GetSong (GetSongRequest) returns (SongCount);
+  rpc UpdateSong (SongCount) returns (SongResponse);
+  rpc DeleteSong (GetSongRequest) returns (SongResponse);
+}
+
+message SongCount {
+  string name = 1;
+  int32 playsCount = 2;
+}
+
+message GetSongRequest {
+  string name = 1;
+}
+
+message SongResponse {
+  bool success = 1;
+  string message = 2;
+}

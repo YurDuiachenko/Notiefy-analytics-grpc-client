@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Notiefy-toplist-client
+
+server:
+  port: 8083
+
+rabbitmq:
+  song-added:
+    queue: songAdded
+  song-played:
+    queue: songPlayed
+  song-count:
+    queue: songCount
+    exchange: songCountExchange
+    key: song.count
