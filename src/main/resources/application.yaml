@@ -1,16 +1,20 @@
 spring:
   application:
     name: Notiefy-toplist-client
+  rabbitmq:
+    host: localhost
+    password: guest
+    username: guest
+    port: 5672
+    virtual-host: /
 
 server:
   port: 8083
 
 rabbitmq:
-  song-added:
-    queue: songAdded
-  song-played:
-    queue: songPlayed
   song-count:
     queue: songCount
-    exchange: songCountExchange
-    key: song.count
+  song-analytics:
+    queue: songAnalytics
+    exchange: songAnalyticsExchange
+    key: song.analytics
